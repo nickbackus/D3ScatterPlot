@@ -1,0 +1,19 @@
+circle{
+  opacity: 0.9;
+  stroke: gray;
+  stroke-width: 1;
+}
+
+.dirty{
+  fill: orange;
+  background-color: orange;
+}
+
+.clean{
+  fill: blue;
+}
+
+.color-box{
+  width: 15px;
+  height: 15px;
+}
