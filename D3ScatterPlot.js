@@ -9,7 +9,7 @@ req.onload = () => {
 }
 
 let renderData = (JSONdata) => {
-  let padding = 35, w = 500, h = 400 , colors = [["blue", "A"], ["orange", "B"]];
+  let padding = 35, w = 700, h = 400 , colors = [["orange", "Bicyclists With Doping Allegations"], ["blue", "Bicyclists Without Doping Allegations"]];
   
   let data = JSONdata.map(item => {
     return {...item, Year: d3.utcParse("%Y")(item.Year), FinishTime: d3.utcParse("%s")(item.Seconds)};
@@ -92,16 +92,16 @@ let renderData = (JSONdata) => {
     .data(colors)
     .enter()
     .append("rect")
-    .attr("x", w - 100)
-    .attr("y", (d, i) => 10 + (i * 30))
+    .attr("x", w - 300)
+    .attr("y", (d, i) => 40 + (i * 30))
     .attr("width", 10)
     .attr("height", 10)
     .style("fill", (d, i) => {
       //This is kinda hacky but it works 
       legend.append("text")
       .text(d[1])
-      .attr("x", w - 85)
-      .attr("y", 20 + i * 30)
+      .attr("x", w - 285)
+      .attr("y", 50 + i * 30)
       return d[0];
     });
 
