@@ -3,8 +3,6 @@ req.open ("GET", "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenc
 req.send();
 req.onload = () => {
   json = JSON.parse(req.responseText)
-  console.log(json);
-  //console.log("yo")
   renderData(json)
 }
 
@@ -17,10 +15,6 @@ let renderData = (JSONdata) => {
   
   let utcYear = d3.utcFormat("%Y");
   let utcFinishTime = d3.utcFormat("%M:%S");
-  
-  //data.map(d=> console.log(utcYear(d.Year), utcFinishTime(d.FinishTime)))
-  //console.log(d3.extent(data, d=> d.Year.getUTCFullYear()).map(d=>d3.utcParse("%Y")(d)))
-  //console.log((d3.extent(data, d=> d.Seconds)).map(d=>(d3.utcParse("%s")(d))))
   
   const svg = d3.select("#chart")
     .append("svg")
